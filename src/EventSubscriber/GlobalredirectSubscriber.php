@@ -257,6 +257,9 @@ class GlobalredirectSubscriber implements EventSubscriberInterface {
    *   Returns TRUE if the path is the site's front page.
    */
   protected function isFrontPage($path) {
+    if ($path === '') {
+      return TRUE;
+    }
     // @todo PathMatcher::isFrontPage() doesn't work here for some reason.
     $front = \Drupal::config('system.site')->get('page.front');
 
