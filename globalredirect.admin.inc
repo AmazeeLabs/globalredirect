@@ -104,6 +104,13 @@ function globalredirect_settings() {
     '#default_value' => $settings['ignore_admin_path'],
   );
 
+  $form['settings']['ignore_files_path'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Ignore Public Files Path'),
+    '#description' => t('If enabled, any request to public files of the site will be ignored by Global Redirect.'),
+    '#default_value' => $settings['ignore_files_path'],
+  );
+
   $form['buttons']['submit'] = array(
     '#type' => 'submit',
     '#submit' => array('globalredirect_settings_submit_save'),
