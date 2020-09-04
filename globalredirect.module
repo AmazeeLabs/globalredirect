@@ -85,8 +85,7 @@ function globalredirect_init() {
   $files_path = variable_get('file_public_path', conf_path() . '/files');
   if ($settings['ignore_files_path'] &&
     strpos($request_path, $files_path) !== FALSE) {
-    $prefix = '';
-    $options['prefix'] = NULL;
+    return;
   }
 
   // Do a check if this is a front page
